@@ -23,9 +23,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>{
-        this.state.showGrid ? <DataGrid {...this.state.items} /> : <div>Loading...</div>
-      }
+      <div>
+        <DataGrid {...this.state.items} />         
+      
       </div>
     )
   }

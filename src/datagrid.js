@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { AgGridColumn, AgGridReact } from 'ag-grid-react';
+import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 
@@ -12,6 +12,7 @@ class DataGrid extends Component {
     //console.log(props);
     this.state = {
       myobj,
+      rowData: [],
       columnDefs: [
         {headerName: "ID", field: "id", width: 40, sortable: true},
         {headerName: "Timestamp", field: "timestamp", width: 170, sortable: true},
@@ -81,7 +82,8 @@ class DataGrid extends Component {
               style={{height: '500px', width: '700px', float: "clear" }} >
               <AgGridReact rowData={this.state.rowData} columnDefs={this.state.columnDefs} rowSelection="single"
                 onGridReady={this.onGridReady}
-                onSelectionChanged={this.onSelectionChanged.bind(this)} />
+                onSelectionChanged={this.onSelectionChanged.bind(this)}>
+                  </AgGridReact>
               
             </div>
           </div>
