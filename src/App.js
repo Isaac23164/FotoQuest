@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-import axios from 'axios';
 import DataGrid from './datagrid';
 
 class App extends Component {
@@ -15,11 +14,11 @@ class App extends Component {
         showGrid: false
       }
 
-      axios.get(`https://api.myjson.com/bins/jpfmg`)
-          .then(res => {
-            const items = res.data;
-            this.setState({ items, showGrid: true });
-      })
+      // axios.get(`https://api.myjson.com/bins/jpfmg`)
+      //     .then(res => {
+      //       const items = res.data;
+      //       this.setState({ items, showGrid: true });
+      // })
   }
 
   render() {

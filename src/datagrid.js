@@ -97,13 +97,4 @@ export default DataGrid;
 //   ) 
 // } else {
 
-                {/* <AgGridColumn field="id" width={70} sortable checkboxSelection resizable></AgGridColumn>
-                <AgGridColumn field="timestamp" width={170} sortable resizable></AgGridColumn>
-                <AgGridColumn headerName="App" field="platform.app" width={70} resizable></AgGridColumn>
-                <AgGridColumn headerName="Device" field="platform.device" width={100} resizable></AgGridColumn>
-                <AgGridColumn headerName="Latitude" field="location.lat" width={80} resizable></AgGridColumn>
-                <AgGridColumn headerName="ee" field="ee" width={130} 
-                  editable="true" cellEditor='agSelectCellEditor'
-                ></AgGridColumn>
-                <AgGridColumn headerName="pic0" field="photos.0.url" hide={true}></AgGridColumn>
-                <AgGridColumn headerName="pic1" field="photos.1.url" hide={true}></AgGridColumn> */}
+                
