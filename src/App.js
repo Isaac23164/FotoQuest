@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import axios from 'axios';
+import DataGrid from './datagrid';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    items: []
+  }
+
+  constructor(props) {
+      super(props);
+
+      this.state = {
+        showGrid: false
+      }
+
+      axios.get(`https://api.myjson.com/bins/jpfmg`)
+          .then(res => {
+            const items = res.data;
+            this.setState({ items, showGrid: true });
+      })
+  }
+
+  render() {
+    return (
+      <div>{
+        this.state.showGrid ? <DataGrid {...this.state.items} /> : <div>Loading...</div>
+      }
+      </div>
+    )
+  }
 }
 
 export default App;
